@@ -2,9 +2,9 @@ name: compile code and tests
 
 on:
   push:
-    branches: [ main, develop, issue15_CI_workflow ]
+    branches: [ main, develop, issue15_CI_workflow, fix_clang_warning]
   pull_request:
-    branches: [ main, develop,  issue15_CI_workflow ]
+    branches: [ main, develop, issue15_CI_workflow, fix_clang_warning]
 
 jobs:
 
