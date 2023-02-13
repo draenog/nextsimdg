@@ -62,5 +62,6 @@ int main(int argc, char* argv[])
     MPI_Finalize();
 #endif
 
+    std::cout << "SUCCESS\n";
     return 0;
 }
