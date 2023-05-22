@@ -5,6 +5,7 @@ on:
     branches: [ main, develop, issue15_CI_workflow ]
   pull_request:
     branches: [ main, develop,  issue15_CI_workflow ]
+  workflow_dispatch:
 
 jobs:
 
