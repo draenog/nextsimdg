@@ -2,7 +2,7 @@ name: compile code and tests
 
 on:
   push:
-    branches: [ main, develop, issue103_CI ]
+    branches: [ main, develop, issue103_CI, mpilocal ]
   pull_request:
     branches: [ main, develop,  issue103_CI ]
 
