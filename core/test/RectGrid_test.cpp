@@ -24,13 +24,14 @@
 #include <fstream>
 
 const std::string filename = "RectGrid_test.nc";
-const std::string partition_filename = "partition_metadata_1.nc";
+const std::string partition_filename = "partition_metadata_3.nc";
+const std::string date_string = "2000-01-01T00:00:00Z";
 
 namespace Nextsim {
 TEST_SUITE_BEGIN("RectGrid");
 #ifdef USE_MPI
 // Number of ranks should not be hardcoded here
-MPI_TEST_CASE("Write and read a ModelState-based RectGrid restart file", 1)
+MPI_TEST_CASE("Write and read a ModelState-based RectGrid restart file", 3)
 #else
 TEST_CASE("Write and read a ModelState-based RectGrid restart file")
 #endif
@@ -39,8 +40,8 @@ TEST_CASE("Write and read a ModelState-based RectGrid restart file")
     grid.setIO(new RectGridIO(grid));
 
     // Fill in the data. It is not real data.
-    size_t nx = 25;
-    size_t ny = 15;
+    size_t nx = 5;
+    size_t ny = 7;
     double yFactor = 0.01;
     double xFactor = 0.0001;
 
@@ -78,7 +79,7 @@ TEST_CASE("Write and read a ModelState-based RectGrid restart file")
     }, {}};
 
     ModelMetadata metadata;
-    metadata.setTime(TimePoint("2000-01-01T00:00:00Z"));
+    metadata.setTime(TimePoint(date_string));
     // Use x & y coordinates
     ModelArray x(ModelArray::Type::H);
     ModelArray y(ModelArray::Type::H);
@@ -104,47 +105,94 @@ TEST_CASE("Write and read a ModelState-based RectGrid restart file")
     metadata.affixCoordinates(state);
 
 #ifdef USE_MPI
+// Create subcommunicator with only first rank
     metadata.setMpiMetadata(test_comm);
-    metadata.globalExtentX = nx;
-    metadata.globalExtentY = ny;
-    metadata.localCornerX = 0;
-    metadata.localCornerY = 0;
-    metadata.localExtentX = nx;
-    metadata.localExtentY = ny;
-#endif
+    int colour = MPI_UNDEFINED, key = 0;
+    MPI_Comm rank0Comm;
+
+    if(metadata.mpiMyRank ==0) {
+        colour = 0;
+    }
+    MPI_Comm_split(test_comm, colour, key, &rank0Comm);
+
+// Write reference file serially on first MPI rank
+    if (metadata.mpiMyRank == 0) {
+        metadata.setMpiMetadata(rank0Comm);
+        metadata.globalExtentX = nx;
+        metadata.globalExtentY = ny;
+        metadata.localCornerX = 0;
+        metadata.localCornerY = 0;
+        metadata.localExtentX = nx;
+        metadata.localExtentY = ny;
+        grid.dumpModelState(state, metadata, filename);
+        MPI_Comm_free(&rank0Comm);
+    }
+#else
     grid.dumpModelState(state, metadata, filename);
+#endif
+
 
     ModelArray::setDimensions(ModelArray::Type::H, { 1, 1 });
+    ModelArray::setDimensions(ModelArray::Type::Z, { 1, 1, 1 });
     REQUIRE(ModelArray::dimensions(ModelArray::Type::H)[0] == 1);
     RectangularGrid gridIn;
-    size_t targetX = 3;
-    size_t targetY = 7;
+    size_t targetX = 1;
+    size_t targetY = 2;
 
     gridIn.setIO(new RectGridIO(grid));
 #ifdef USE_MPI
-    ModelState ms = gridIn.getModelState(filename, partition_filename, metadata);
+    ModelMetadata metadataIn(partition_filename, test_comm);
+    metadataIn.setTime(TimePoint(date_string));
+    ModelState ms = gridIn.getModelState(filename, metadataIn);
 #else
     ModelState ms = gridIn.getModelState(filename);
 #endif
 
+#ifdef USE_MPI
+    REQUIRE(ModelArray::dimensions(ModelArray::Type::H)[0] == metadataIn.localExtentX);
+    REQUIRE(ModelArray::dimensions(ModelArray::Type::H)[1] == metadataIn.localExtentY);
+    REQUIRE(ModelArray::dimensions(ModelArray::Type::Z)[0] == metadataIn.localExtentX);
+    REQUIRE(ModelArray::dimensions(ModelArray::Type::Z)[1] == metadataIn.localExtentY);
+#else
     REQUIRE(ModelArray::dimensions(ModelArray::Type::H)[0] == nx);
     REQUIRE(ModelArray::dimensions(ModelArray::Type::H)[1] == ny);
+    REQUIRE(ModelArray::dimensions(ModelArray::Type::Z)[0] == nx);
+    REQUIRE(ModelArray::dimensions(ModelArray::Type::Z)[1] == ny);
+#endif
     REQUIRE(ms.data.at("hice")(targetX, targetY) != 0);
     REQUIRE(ms.data.at("hice")(targetX, targetY) > 1);
     REQUIRE(ms.data.at("hice")(targetX, targetY) < 2);
-    REQUIRE(ms.data.at("hice")(targetX, targetY) == 1.0703);
+#ifdef USE_MPI
+    REQUIRE(ms.data.at("hice")(targetX, targetY) == 1.0201 + metadataIn.localCornerY * 0.01 + metadataIn.localCornerX * 0.0001);
+#else
+    REQUIRE(ms.data.at("hice")(targetX, targetY) == 1.0201);
+#endif
 
     ZField ticeIn = ms.data.at("tice");
 
     REQUIRE(ticeIn.dimensions()[2] == 1);
-    REQUIRE(ticeIn(targetX, targetY, 0U) == -1.0703);
+#ifdef USE_MPI
+    REQUIRE(ticeIn(targetX, targetY, 0U) == -1.0201 - metadataIn.localCornerY * 0.01 - metadataIn.localCornerX * 0.0001);
+#else
+    REQUIRE(ticeIn(targetX, targetY, 0U) == -1.0201);
+#endif
 
     // Check that the coordinates have been correctly written and read
     REQUIRE(ms.data.count(xName) > 0);
     REQUIRE(ms.data.count(yName) > 0);
+#ifdef USE_MPI
+    REQUIRE(ms.data.at(xName)(1, 0) == dx * (metadataIn.localCornerX +1));
+    REQUIRE(ms.data.at(xName)(0, 1) == dx * metadataIn.localCornerX);
+    REQUIRE(ms.data.at(yName)(0, 1) == dy * (metadataIn.localCornerY + 1));
+#else
     REQUIRE(ms.data.at(xName)(1, 0) == dx);
     REQUIRE(ms.data.at(xName)(0, 1) == 0);
     REQUIRE(ms.data.at(yName)(0, 1) == dy);
+#endif
+
+#ifdef USE_MPI
+    gridIn.dumpModelState(ms, metadataIn, "RectGrid_test_parallel.nc");
+#endif
 
     std::remove(filename.c_str());
 }
