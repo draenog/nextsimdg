@@ -1,0 +1,7 @@
+<map id="Nextsim::IModelStep" name="Nextsim::IModelStep">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,487,149,712"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_iterator_1_1_iterant.html" title="A base class for classes that specify what happens during one timestep." alt="" coords="21,179,134,439"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,454,80,487,75,487,75,454"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_logged.html" title=" " alt="" coords="23,5,132,131"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,146,80,179,75,179,75,146"/>
+</map>

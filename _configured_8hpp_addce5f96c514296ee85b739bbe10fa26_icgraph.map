@@ -1,0 +1,10 @@
+<map id="Nextsim::tryConfigure" name="Nextsim::tryConfigure">
+<area shape="rect" id="Node000001" title="Template function for conditionally configuring references." alt="" coords="396,42,539,68"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="501,30,490,23,468,21,447,23,436,28,434,33,439,40,435,43,429,34,433,24,446,18,468,16,492,18,504,25"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_element_data.html#af5a655d97cfa48e26cdb8e016dcdb0b0" title="Configures the PrognosticData and physics implementation aspects of the object." alt="" coords="199,5,348,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,45,348,40,349,34,381,39"/>
+<area shape="rect" id="Node000004" href="$_configured_8hpp.html#a8880ec08a7a99226178c8ac9dd9e463d" title="Template function for conditionally configuring classes via a pointer." alt="" coords="202,70,345,96"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="381,70,346,75,345,70,380,65"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_dev_grid.html#a49ba553cb6982e8ad2d22d62ed4d5ad0" title="Dumps the data to a file path." alt="" coords="5,13,151,39"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="183,28,151,28,151,23,183,23"/>
+</map>

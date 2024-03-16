@@ -1,0 +1,25 @@
+<map id="ModuleLoader::init" name="ModuleLoader::init">
+<area shape="rect" id="Node000001" title="Initializes the loader with no modules loaded." alt="" coords="883,202,1009,228"/>
+<area shape="rect" id="Node000002" href="$class_module_loader.html#a5655e5840bdda31cd7f8f4f63864de8c" title="Returns the default loader instance." alt="" coords="667,177,835,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="867,207,835,203,835,198,867,202"/>
+<area shape="rect" id="Node000012" href="$class_module_loader.html#aa915b6676c87f12be52fd71a068c4006" title="Initializes the model with an initial set of module implementations selected." alt="" coords="688,226,814,252"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="867,227,815,234,814,229,867,222"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_element_data.html#af5a655d97cfa48e26cdb8e016dcdb0b0" title="Configures the PrognosticData and physics implementation aspects of the object." alt="" coords="456,5,605,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="728,166,681,114,651,86,618,61,595,49,598,44,621,57,654,82,685,110,732,163"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_prognostic_data.html#ac86335c408d04ad2cfb8e4b5362d0d58" title="The configuration function." alt="" coords="448,71,612,111"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="711,172,618,127,588,114,590,109,620,122,713,167"/>
+<area shape="rect" id="Node000006" href="$class_nextsim_1_1_element_data.html#ae250c4a690aca54f5c88e4b845324df6" title="Copy constructor." alt="" coords="456,136,605,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="652,177,605,170,606,165,653,172"/>
+<area shape="rect" id="Node000007" href="$class_nextsim_1_1_structure_factory.html#aaf806e02e1f3df7aba00ed4444d8158c" title="Returns a shared_ptr to a instance of IStructure which matches the passed structure name." alt="" coords="445,201,616,242"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="653,207,617,212,616,207,652,201"/>
+<area shape="rect" id="Node000010" href="$class_nextsim_1_1_element_data.html#a08bf686f5fdd50c7b3cdceee2a64fdda" title="Copy assignment operator." alt="" coords="456,267,605,307"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="679,211,669,216,645,235,621,256,595,269,593,264,618,251,641,231,666,211,677,206"/>
+<area shape="rect" id="Node000011" href="$class_nextsim_1_1_configured_module.html#a29e90d29d512bcaa265422ec2522363f" title="Parse the configuration for all of the modules defined in ModuleLoader." alt="" coords="441,332,619,373"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="672,213,669,216,658,228,651,240,645,266,640,293,633,307,621,321,604,334,601,329,618,317,628,304,635,292,640,265,646,238,653,225,666,212,669,209"/>
+<area shape="rect" id="Node000004" href="$class_nextsim_1_1_dev_grid.html#a49ba553cb6982e8ad2d22d62ed4d5ad0" title="Dumps the data to a file path." alt="" coords="235,13,380,39"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="440,28,381,28,381,23,440,23"/>
+<area shape="rect" id="Node000008" href="$class_nextsim_1_1_structure_factory.html#abcf5ef075dbaa48cd4ed4a8eb7c2013e" title="Returns a shared_ptr to a instance of IStructure which implements the structure named in the passed N..." alt="" coords="222,201,393,242"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="429,224,394,224,394,219,429,219"/>
+<area shape="rect" id="Node000009" href="$class_nextsim_1_1_model.html#a0f5b5a4d2b53a04bbdc7ce3f7d0bef5d" title="The configuration function." alt="" coords="5,209,174,235"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="206,224,174,224,174,219,206,219"/>
+</map>

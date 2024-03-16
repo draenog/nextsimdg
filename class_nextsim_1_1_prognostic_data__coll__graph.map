@@ -1,0 +1,12 @@
+<map id="Nextsim::PrognosticData" name="Nextsim::PrognosticData">
+<area shape="rect" id="Node000001" title="A class holding all of the data for an element that is carried from one timestep to another." alt="" coords="60,838,231,1323"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_base_element_data.html" title="The base class for the per element data classes." alt="" coords="5,596,176,681"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,696,118,837,113,838,95,696"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_configured.html" title=" " alt="" coords="200,488,360,788"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,803,222,838,217,837,228,802"/>
+<area shape="rect" id="Node000004" href="$class_nextsim_1_1_configured_base.html" title="A base class necessary for the tryConfigure() functions to work." alt="" coords="159,5,316,91"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="239,106,240,251,249,425,257,488,251,489,244,426,235,251,234,106"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_configured.html" title=" " alt="" coords="259,140,419,425"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="264,103,280,139,275,141,259,105"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="315,440,307,489,302,488,310,439"/>
+</map>

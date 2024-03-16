@@ -1,0 +1,52 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_nextsim_1_1_base_element_data.html" title="The base class for the per element data classes." alt="" coords="220,39,399,64"/>
+<area shape="rect" id="Node000001" href="$class_nextsim_1_1_external_data.html" title="A class holding all of the data for an element that is imported from external sources (coupled models..." alt="" coords="455,5,603,31"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="413,33,454,27,455,32,414,38"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_prognostic_data.html" title="A class holding all of the data for an element that is carried from one timestep to another." alt="" coords="447,104,611,130"/>
+<area shape="poly" id="edge5_Node000000_Node000003" title=" " alt="" coords="374,67,400,74,448,90,482,101,481,106,446,95,398,79,373,72"/>
+<area shape="rect" id="Node000022" href="$class_nextsim_1_1_unused_data.html" title="A class to be used when a non&#45;specific class derived from BaseElementData is needed." alt="" coords="456,55,603,80"/>
+<area shape="poly" id="edge7_Node000000_Node000022" title=" " alt="" coords="415,57,455,59,455,65,415,62"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_element_data.html" title="The class which holds all the data for a single element of the model." alt="" coords="661,104,810,130"/>
+<area shape="poly" id="edge4_Node000001_Node000002" title=" " alt="" coords="598,34,612,40,671,71,717,101,714,106,668,76,610,45,596,39"/>
+<area shape="poly" id="edge6_Node000003_Node000002" title=" " alt="" coords="627,114,661,114,661,120,627,120"/>
+<area shape="poly" id="edge8_Node000022_Node000002" title=" " alt="" coords="601,82,679,101,678,106,600,87"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_configured_base.html" title="A base class necessary for the tryConfigure() functions to work." alt="" coords="5,260,172,286"/>
+<area shape="rect" id="Node000006" href="$class_nextsim_1_1_configured.html" title=" " alt="" coords="241,154,378,195"/>
+<area shape="poly" id="edge9_Node000005_Node000006" title=" " alt="" coords="126,250,219,205,249,193,251,197,221,210,129,255"/>
+<area shape="rect" id="Node000008" href="$class_nextsim_1_1_configured.html" title=" " alt="" coords="241,219,378,260"/>
+<area shape="poly" id="edge11_Node000005_Node000008" title=" " alt="" coords="187,255,240,247,241,252,188,261"/>
+<area shape="rect" id="Node000010" href="$class_nextsim_1_1_configured.html" title=" " alt="" coords="241,285,378,325"/>
+<area shape="poly" id="edge13_Node000005_Node000010" title=" " alt="" coords="188,284,241,292,240,298,187,290"/>
+<area shape="rect" id="Node000011" href="$class_nextsim_1_1_configured.html" title=" " alt="" coords="241,350,378,391"/>
+<area shape="poly" id="edge15_Node000005_Node000011" title=" " alt="" coords="130,291,221,334,251,347,249,352,219,339,128,296"/>
+<area shape="rect" id="Node000004" href="$class_nextsim_1_1_configured.html" title=" " alt="" coords="241,89,378,129"/>
+<area shape="poly" id="edge17_Node000005_Node000004" title=" " alt="" coords="107,246,154,193,185,165,218,140,241,127,244,132,221,144,188,169,158,197,111,249"/>
+<area shape="rect" id="Node000021" href="$class_nextsim_1_1_configured.html" title=" " alt="" coords="226,415,393,440"/>
+<area shape="poly" id="edge19_Node000005_Node000021" title=" " alt="" coords="111,296,157,349,188,376,221,400,247,412,245,416,218,404,184,381,153,353,107,300"/>
+<area shape="rect" id="Node000007" href="$class_config2.html" title=" " alt="" coords="497,161,561,187"/>
+<area shape="poly" id="edge10_Node000006_Node000007" title=" " alt="" coords="393,172,497,172,497,177,393,177"/>
+<area shape="rect" id="Node000009" href="$class_config3.html" title=" " alt="" coords="497,227,561,252"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="393,237,497,237,497,242,393,242"/>
+<area shape="poly" id="edge14_Node000010_Node000002" title=" " alt="" coords="393,307,444,305,500,299,557,285,610,263,650,232,684,195,709,158,725,129,730,131,714,160,688,198,654,236,613,267,559,290,501,304,445,311,393,312"/>
+<area shape="rect" id="Node000012" href="$class_nextsim_1_1_model.html" title="A class that encapsulates the whole of the model." alt="" coords="474,357,584,383"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="393,368,473,368,473,373,393,373"/>
+<area shape="poly" id="edge18_Node000004_Node000003" title=" " alt="" coords="393,109,447,111,446,117,393,115"/>
+<area shape="rect" id="Node000013" href="$class_nextsim_1_1_logged.html" title=" " alt="" coords="250,464,369,490"/>
+<area shape="poly" id="edge27_Node000013_Node000012" title=" " alt="" coords="382,459,397,451,412,437,421,422,430,407,445,392,472,379,475,384,449,396,434,410,425,425,417,440,401,455,384,464"/>
+<area shape="rect" id="Node000014" href="$class_nextsim_1_1_iterator.html" title="A class that controls how time steps are performed." alt="" coords="471,407,587,432"/>
+<area shape="poly" id="edge20_Node000013_Node000014" title=" " alt="" coords="376,457,476,430,478,436,377,462"/>
+<area shape="rect" id="Node000015" href="$class_nextsim_1_1_iterator_1_1_iterant.html" title="A base class for classes that specify what happens during one timestep." alt="" coords="468,506,590,547"/>
+<area shape="poly" id="edge21_Node000013_Node000015" title=" " alt="" coords="384,491,468,510,467,515,383,496"/>
+<area shape="rect" id="Node000016" href="$class_nextsim_1_1_counterant.html" title=" " alt="" coords="666,435,805,460"/>
+<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="597,497,610,492,658,469,688,458,690,463,660,474,612,497,600,502"/>
+<area shape="rect" id="Node000017" href="$class_nextsim_1_1_i_model_step.html" title=" " alt="" coords="665,484,806,510"/>
+<area shape="poly" id="edge23_Node000015_Node000017" title=" " alt="" coords="605,513,664,504,665,510,606,518"/>
+<area shape="rect" id="Node000019" href="$class_nextsim_1_1_iterator_1_1_null_iterant.html" title="A simple Iterant that does nothing." alt="" coords="674,534,797,575"/>
+<area shape="poly" id="edge25_Node000015_Node000019" title=" " alt="" coords="606,534,674,543,674,549,605,539"/>
+<area shape="rect" id="Node000020" href="$class_nextsim_1_1_simple_iterant.html" title="A simple implementation of the Iterator::Iterant class." alt="" coords="659,599,812,624"/>
+<area shape="poly" id="edge26_Node000015_Node000020" title=" " alt="" coords="587,551,660,584,693,596,691,601,658,589,585,556"/>
+<area shape="rect" id="Node000018" href="$class_nextsim_1_1_dev_step.html" title=" " alt="" coords="860,484,985,510"/>
+<area shape="poly" id="edge24_Node000017_Node000018" title=" " alt="" coords="822,494,859,494,859,500,822,500"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="482,456,576,482"/>
+<area shape="poly" id="edge28_Node000023_Node000002" title=" " alt="" coords="589,456,610,443,642,406,668,363,689,317,705,271,724,187,731,130,736,130,729,188,710,273,694,319,673,366,646,409,613,447,592,460"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="/github/workspace/core/src/SimpleIterant.cpp" name="/github/workspace/core/src/SimpleIterant.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="201,5,358,46"/>
+<area shape="rect" id="Node000002" href="$_simple_iterant_8hpp.html" title=" " alt="" coords="11,94,178,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,49,137,90,135,85,232,44"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="148,315,201,341"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="269,48,243,95,184,301,179,299,238,93,264,45"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="253,94,306,120"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="282,46,282,78,277,78,277,46"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="331,94,402,120"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="303,44,343,81,340,85,299,48"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="425,94,494,120"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="326,44,419,85,417,90,323,49"/>
+<area shape="rect" id="Node000003" href="$_iterator_8hpp.html" title=" " alt="" coords="51,168,137,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,120,97,152,92,152,92,120"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,241,66,267"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,195,57,231,53,228,82,192"/>
+<area shape="rect" id="Node000005" href="$_logged_8hpp.html" title=" " alt="" coords="90,241,178,267"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="103,192,122,227,118,229,98,195"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="143,266,162,300,158,303,138,269"/>
+</map>

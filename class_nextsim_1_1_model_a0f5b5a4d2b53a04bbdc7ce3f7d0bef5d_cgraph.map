@@ -1,0 +1,32 @@
+<map id="Nextsim::Model::configure" name="Nextsim::Model::configure">
+<area shape="rect" id="Node000001" title="The configuration function." alt="" coords="5,337,174,363"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_structure_factory.html#abcf5ef075dbaa48cd4ed4a8eb7c2013e" title="Returns a shared_ptr to a instance of IStructure which implements the structure named in the passed N..." alt="" coords="222,221,393,261"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,334,250,266,253,271,118,339"/>
+<area shape="rect" id="Node000013" href="$class_nextsim_1_1_configured.html#ae80fbec20e4f379dcdfce4efd1e2ddc0" title="Gets the value of the configuration with a given name from the default Configurator." alt="" coords="239,330,376,371"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="174,348,223,348,223,353,174,353"/>
+<area shape="rect" id="Node000015" href="$class_nextsim_1_1_iterator.html#a6e346f45f8002e428f2f26d225427747" title="Parses the four strings and sets the time parameters from them." alt="" coords="246,395,369,436"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="136,361,232,390,230,395,134,366"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_structure_factory.html#aaf806e02e1f3df7aba00ed4444d8158c" title="Returns a shared_ptr to a instance of IStructure which matches the passed structure name." alt="" coords="441,122,612,163"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="348,218,440,173,456,166,458,171,442,178,350,222"/>
+<area shape="rect" id="Node000011" href="$class_nextsim_1_1_i_structure.html#ad6722122645c3189edd359689af6d0cf" title="Returns the name of the metadata node." alt="" coords="453,187,600,228"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="393,225,437,218,438,224,393,230"/>
+<area shape="rect" id="Node000012" href="$class_nextsim_1_1_i_structure.html#a2cbb7379198e83e5e50d125b4a366a39" title="The name of the node holding the name of the structure type processed by this class." alt="" coords="461,253,593,293"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="393,251,445,258,444,264,393,256"/>
+<area shape="rect" id="Node000004" href="$class_module_loader.html#a502bee319766ad5e46370a472c2ce114" title="Returns a reference to a static instance of the implementing class." alt="" coords="663,5,880,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="548,119,596,78,627,57,659,40,674,34,676,39,661,45,630,62,599,83,551,123"/>
+<area shape="rect" id="Node000005" href="$class_module_loader.html#a905067fc1b7b283b6abfce30791790a1" title="Returns a newly created instance of the implementing class." alt="" coords="683,55,860,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="576,119,660,89,686,82,687,87,661,94,578,124"/>
+<area shape="rect" id="Node000006" href="$class_module_loader.html#a5655e5840bdda31cd7f8f4f63864de8c" title="Returns the default loader instance." alt="" coords="688,104,855,130"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="612,131,672,124,673,130,613,136"/>
+<area shape="rect" id="Node000008" href="$class_module_loader.html#a65d23011103a161e995145d68d96b273" title=" " alt="" coords="660,153,883,179"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="613,148,645,151,645,156,612,153"/>
+<area shape="rect" id="Node000009" href="$class_module_loader.html#ab07102737844ef6ec1134f35c67803ed" title="Sets the implementation class of a module." alt="" coords="663,203,880,228"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="583,161,661,189,687,196,686,201,660,194,581,166"/>
+<area shape="rect" id="Node000010" href="$class_nextsim_1_1_i_structure.html#ad16bcf5c9da4149176ae1795a2cb1519" title="Returns the structure name that this class will process." alt="" coords="705,253,838,293"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="594,161,614,173,630,191,638,207,647,223,662,239,692,254,689,259,659,243,642,227,634,210,626,194,611,178,591,165"/>
+<area shape="rect" id="Node000007" href="$class_module_loader.html#a5be55a3f555d80b0cdbd50d710f4088b" title="Initializes the loader with no modules loaded." alt="" coords="931,104,1057,130"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="855,114,915,114,915,120,855,120"/>
+<area shape="rect" id="Node000014" href="$class_nextsim_1_1_configured.html#adf60ef61f9ca3c5c7bda782e9fc6229c" title="Adds an option to the per&#45;class option map." alt="" coords="459,342,595,383"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="376,351,443,355,443,360,376,357"/>
+<area shape="poly" id="edge14_Node000014_Node000014" title=" " alt="" coords="485,342,483,332,490,323,505,317,527,315,550,318,565,324,562,329,549,323,527,320,506,322,493,327,488,333,490,341"/>
+</map>

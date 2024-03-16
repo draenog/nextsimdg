@@ -1,0 +1,11 @@
+<map id="Nextsim::PrognosticData::configure" name="Nextsim::PrognosticData::configure">
+<area shape="rect" id="Node000001" title="The configuration function." alt="" coords="5,47,170,88"/>
+<area shape="rect" id="Node000002" href="$class_module_loader.html#a502bee319766ad5e46370a472c2ce114" title="Returns a reference to a static instance of the implementing class." alt="" coords="218,5,434,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,48,245,32,246,37,170,53"/>
+<area shape="rect" id="Node000003" href="$class_module_loader.html#a5655e5840bdda31cd7f8f4f63864de8c" title="Returns the default loader instance." alt="" coords="242,55,410,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,65,227,65,227,70,170,70"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_configured.html#a1976b952b6533bfd8624147f847ac042" title="Template function for conditionally configuring references." alt="" coords="257,105,395,161"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="165,86,243,107,241,112,163,91"/>
+<area shape="rect" id="Node000004" href="$class_module_loader.html#a5be55a3f555d80b0cdbd50d710f4088b" title="Initializes the loader with no modules loaded." alt="" coords="482,55,608,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="410,65,466,65,466,70,410,70"/>
+</map>

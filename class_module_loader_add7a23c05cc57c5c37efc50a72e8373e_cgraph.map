@@ -1,0 +1,11 @@
+<map id="ModuleLoader::setAllDefaults" name="ModuleLoader::setAllDefaults">
+<area shape="rect" id="Node000001" title="Sets the default implementation for all modules." alt="" coords="5,31,196,56"/>
+<area shape="rect" id="Node000002" href="$class_module_loader.html#ad3cef252a5ca522e59fc90e9456a55d2" title="Returns the set of modules that can be implemented as a set of strings." alt="" coords="244,5,419,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,30,228,27,228,32,196,36"/>
+<area shape="rect" id="Node000003" href="$class_module_loader.html#af7ed356f4f35df78e1954c38b48f8ce3" title="Sets the default implementation for a module." alt="" coords="247,55,416,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,51,232,55,232,60,196,56"/>
+<area shape="rect" id="Node000004" href="$class_module_loader.html#a65d23011103a161e995145d68d96b273" title=" " alt="" coords="467,29,689,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="416,56,451,53,452,58,416,62"/>
+<area shape="rect" id="Node000005" href="$class_module_loader.html#ab07102737844ef6ec1134f35c67803ed" title="Sets the implementation class of a module." alt="" coords="470,79,686,104"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="416,73,455,77,454,82,416,78"/>
+</map>

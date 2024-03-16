@@ -1,0 +1,19 @@
+<map id="Nextsim::Logged" name="Nextsim::Logged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="253,5,362,131"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_iterator.html" title="A class that controls how time steps are performed." alt="" coords="74,216,226,401"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,145,212,218,208,215,256,142"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_iterator_1_1_iterant.html" title="A base class for classes that specify what happens during one timestep." alt="" coords="251,179,364,439"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="310,146,310,179,305,179,305,146"/>
+<area shape="rect" id="Node000009" href="$class_nextsim_1_1_model.html" title="A class that encapsulates the whole of the model." alt="" coords="389,226,519,391"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="357,142,379,177,408,225,403,228,374,180,352,145"/>
+<area shape="rect" id="Node000004" href="$class_nextsim_1_1_counterant.html" title=" " alt="" coords="5,507,135,692"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="243,438,240,441,216,458,194,466,173,473,149,489,130,509,126,505,146,485,170,469,192,461,214,453,236,437,239,434"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_i_model_step.html" title=" " alt="" coords="159,487,303,712"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="272,454,263,488,258,486,267,452"/>
+<area shape="rect" id="Node000007" href="$class_nextsim_1_1_iterator_1_1_null_iterant.html" title="A simple Iterant that does nothing." alt="" coords="328,559,441,639"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="348,452,377,559,372,561,343,454"/>
+<area shape="rect" id="Node000008" href="$class_nextsim_1_1_simple_iterant.html" title="A simple implementation of the Iterator::Iterant class." alt="" coords="466,507,610,692"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="375,433,379,437,398,453,416,461,435,469,456,485,476,505,472,509,452,489,432,474,413,466,395,457,375,441,371,437"/>
+<area shape="rect" id="Node000006" href="$class_nextsim_1_1_dev_step.html" title=" " alt="" coords="170,760,293,965"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="234,727,234,760,229,760,229,727"/>
+</map>

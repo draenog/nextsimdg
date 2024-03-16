@@ -1,0 +1,11 @@
+<map id="Nextsim::IStructure::metadataNodeName" name="Nextsim::IStructure::metadataNodeName">
+<area shape="rect" id="Node000001" title="Returns the name of the metadata node." alt="" coords="441,71,588,111"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_dev_grid_i_o.html#aefab4297f4b365a338ba5491bf9e1650" title="Writes data from the vector of data elements into the file location." alt="" coords="239,5,376,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="433,68,374,49,375,44,435,63"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_structure_factory.html#abcf5ef075dbaa48cd4ed4a8eb7c2013e" title="Returns a shared_ptr to a instance of IStructure which implements the structure named in the passed N..." alt="" coords="222,71,393,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="425,94,393,94,393,88,425,88"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_dev_grid_i_o.html#a965e7c13bb243b5c3fce012518e8fe07" title="Reads data from the file location into the vector of data elements." alt="" coords="239,136,376,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="435,119,375,138,374,133,433,114"/>
+<area shape="rect" id="Node000004" href="$class_nextsim_1_1_model.html#a0f5b5a4d2b53a04bbdc7ce3f7d0bef5d" title="The configuration function." alt="" coords="5,78,174,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="206,94,174,94,174,88,206,88"/>
+</map>

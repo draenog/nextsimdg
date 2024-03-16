@@ -1,0 +1,13 @@
+<map id="Nextsim::BaseElementData" name="Nextsim::BaseElementData">
+<area shape="rect" id="Node000001" title="The base class for the per element data classes." alt="" coords="231,5,402,91"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_external_data.html" title="A class holding all of the data for an element that is imported from external sources (coupled models..." alt="" coords="5,159,207,604"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,103,221,140,208,160,203,157,217,137,251,99"/>
+<area shape="rect" id="Node000004" href="$class_nextsim_1_1_prognostic_data.html" title="A class holding all of the data for an element that is carried from one timestep to another." alt="" coords="231,139,402,624"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="319,106,319,139,314,139,314,106"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_unused_data.html" title="A class to be used when a non&#45;specific class derived from BaseElementData is needed." alt="" coords="426,349,565,414"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="384,99,416,137,446,192,468,250,493,348,487,350,463,252,441,194,412,140,380,102"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_element_data.html" title="The class which holds all the data for a single element of the model." alt="" coords="246,672,387,937"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="215,610,222,623,248,674,244,677,217,625,211,613"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="319,639,319,672,314,672,314,639"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="485,429,456,520,416,625,390,681,385,679,412,623,451,519,480,427"/>
+</map>

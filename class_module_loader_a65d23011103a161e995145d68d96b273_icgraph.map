@@ -1,0 +1,15 @@
+<map id="ModuleLoader::listImplementations" name="ModuleLoader::listImplementations">
+<area shape="rect" id="Node000001" title=" " alt="" coords="686,78,909,104"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_structure_factory.html#aaf806e02e1f3df7aba00ed4444d8158c" title="Returns a shared_ptr to a instance of IStructure which matches the passed structure name." alt="" coords="464,5,635,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="730,76,629,49,630,44,732,71"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_configured_module.html#a29e90d29d512bcaa265422ec2522363f" title="Parse the configuration for all of the modules defined in ModuleLoader." alt="" coords="460,71,638,111"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="671,94,639,94,639,88,671,88"/>
+<area shape="rect" id="Node000006" href="$class_module_loader.html#af7ed356f4f35df78e1954c38b48f8ce3" title="Sets the default implementation for a module." alt="" coords="465,136,633,161"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="724,110,609,137,608,132,723,105"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_structure_factory.html#abcf5ef075dbaa48cd4ed4a8eb7c2013e" title="Returns a shared_ptr to a instance of IStructure which implements the structure named in the passed N..." alt="" coords="231,5,403,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="448,28,403,28,403,23,448,23"/>
+<area shape="rect" id="Node000004" href="$class_nextsim_1_1_model.html#a0f5b5a4d2b53a04bbdc7ce3f7d0bef5d" title="The configuration function." alt="" coords="5,13,174,39"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="216,28,174,28,174,23,216,23"/>
+<area shape="rect" id="Node000007" href="$class_module_loader.html#add7a23c05cc57c5c37efc50a72e8373e" title="Sets the default implementation for all modules." alt="" coords="222,136,412,161"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="450,151,413,151,413,146,450,146"/>
+</map>

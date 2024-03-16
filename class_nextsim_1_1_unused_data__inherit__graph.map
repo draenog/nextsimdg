@@ -1,0 +1,7 @@
+<map id="Nextsim::UnusedData" name="Nextsim::UnusedData">
+<area shape="rect" id="Node000001" title="A class to be used when a non&#45;specific class derived from BaseElementData is needed." alt="" coords="21,139,160,204"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_element_data.html" title="The class which holds all the data for a single element of the model." alt="" coords="20,252,161,517"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,219,93,252,88,252,88,219"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_base_element_data.html" title="The base class for the per element data classes." alt="" coords="5,5,176,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,106,93,139,88,139,88,106"/>
+</map>

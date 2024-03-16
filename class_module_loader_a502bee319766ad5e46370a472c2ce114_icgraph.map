@@ -1,0 +1,11 @@
+<map id="ModuleLoader::getImplementation" name="ModuleLoader::getImplementation">
+<area shape="rect" id="Node000001" title="Returns a reference to a static instance of the implementing class." alt="" coords="660,46,877,72"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_prognostic_data.html#ac86335c408d04ad2cfb8e4b5362d0d58" title="The configuration function." alt="" coords="445,5,609,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="655,46,609,40,610,34,656,41"/>
+<area shape="rect" id="Node000003" href="$class_nextsim_1_1_structure_factory.html#aaf806e02e1f3df7aba00ed4444d8158c" title="Returns a shared_ptr to a instance of IStructure which matches the passed structure name." alt="" coords="441,71,612,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="652,77,613,82,612,77,651,72"/>
+<area shape="rect" id="Node000004" href="$class_nextsim_1_1_structure_factory.html#abcf5ef075dbaa48cd4ed4a8eb7c2013e" title="Returns a shared_ptr to a instance of IStructure which implements the structure named in the passed N..." alt="" coords="222,71,393,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="426,94,394,94,394,88,426,88"/>
+<area shape="rect" id="Node000005" href="$class_nextsim_1_1_model.html#a0f5b5a4d2b53a04bbdc7ce3f7d0bef5d" title="The configuration function." alt="" coords="5,78,174,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="206,94,174,94,174,88,206,88"/>
+</map>

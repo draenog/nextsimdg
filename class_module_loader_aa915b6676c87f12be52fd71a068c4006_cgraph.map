@@ -1,0 +1,7 @@
+<map id="ModuleLoader::init" name="ModuleLoader::init">
+<area shape="rect" id="Node000001" title="Initializes the model with an initial set of module implementations selected." alt="" coords="5,31,132,56"/>
+<area shape="rect" id="Node000002" href="$class_module_loader.html#a5be55a3f555d80b0cdbd50d710f4088b" title="Initializes the loader with no modules loaded." alt="" coords="225,5,351,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,34,209,25,209,30,132,39"/>
+<area shape="rect" id="Node000003" href="$class_module_loader.html#ab07102737844ef6ec1134f35c67803ed" title="Sets the implementation class of a module." alt="" coords="180,55,396,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,48,164,51,164,57,132,53"/>
+</map>

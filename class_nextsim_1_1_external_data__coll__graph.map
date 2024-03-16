@@ -1,0 +1,5 @@
+<map id="Nextsim::ExternalData" name="Nextsim::ExternalData">
+<area shape="rect" id="Node000001" title="A class holding all of the data for an element that is imported from external sources (coupled models..." alt="" coords="5,139,207,584"/>
+<area shape="rect" id="Node000002" href="$class_nextsim_1_1_base_element_data.html" title="The base class for the per element data classes." alt="" coords="21,5,191,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,106,109,139,103,139,103,106"/>
+</map>

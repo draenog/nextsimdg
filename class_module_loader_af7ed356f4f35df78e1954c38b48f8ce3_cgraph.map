@@ -1,0 +1,7 @@
+<map id="ModuleLoader::setDefault" name="ModuleLoader::setDefault">
+<area shape="rect" id="Node000001" title="Sets the default implementation for a module." alt="" coords="5,31,174,56"/>
+<area shape="rect" id="Node000002" href="$class_module_loader.html#a65d23011103a161e995145d68d96b273" title=" " alt="" coords="222,5,444,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,32,206,29,206,34,175,37"/>
+<area shape="rect" id="Node000003" href="$class_module_loader.html#ab07102737844ef6ec1134f35c67803ed" title="Sets the implementation class of a module." alt="" coords="225,55,441,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,49,210,53,209,58,174,54"/>
+</map>
