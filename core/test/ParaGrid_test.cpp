@@ -227,7 +227,7 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
 
     REQUIRE(ms.data.count(gridAzimuthName) > 0);
     REQUIRE(ms.data.at(gridAzimuthName)(0, 0) == gridAzimuth0);
-    std::filesystem::remove(filename);
+//    std::filesystem::remove(filename);
 }
 
 TEST_CASE("Write a diagnostic ParaGrid file")
@@ -399,7 +399,7 @@ TEST_CASE("Write a diagnostic ParaGrid file")
 
     ncFile.close();
 
-    std::filesystem::remove(diagFile);
+//    std::filesystem::remove(diagFile);
 }
 
 #define TO_STR(s) TO_STRI(s)
