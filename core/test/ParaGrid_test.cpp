@@ -51,8 +51,8 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
     grid.setIO(pio);
 
     // Set the dimension lengths
-    size_t nx = 25;
-    size_t ny = 15;
+    size_t nx = 5;
+    size_t ny = 7;
     size_t nz = 3;
     NZLevels::set(nz);
     size_t nxcg = CG * nx + 1;
@@ -117,8 +117,8 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
         }
     }
 
-    REQUIRE(coordinates.components({ 12, 13 })[0] - coordinates.components({ 11, 13 })[0] == scale);
-    REQUIRE(coordinates.components({ 12, 13 })[1] - coordinates.components({ 12, 12 })[1] == scale);
+    REQUIRE(coordinates.components({ 3, 4 })[0] - coordinates.components({ 2, 4 })[0] == scale);
+    REQUIRE(coordinates.components({ 3, 3 })[1] - coordinates.components({ 3, 2 })[1] == scale);
 
     HField x;
     HField y;
@@ -206,7 +206,7 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
     REQUIRE(ModelArray::nComponents(ModelArray::Type::DG) == DG);
     REQUIRE(hiceRef.nComponents() == DG);
 
-    REQUIRE(ticeRef(12, 14, 1) == tice(12, 14, 1));
+    REQUIRE(ticeRef(3, 4, 1) == tice(3, 4, 1));
 
     // Here we don't bother passing the coordinate arrays through a ModelMetadata object
     ModelArray& coordRef = ms.data.at(coordsName);
@@ -214,16 +214,16 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
     REQUIRE(coordRef.nComponents() == 2);
     REQUIRE(coordRef.dimensions()[0] == nx + 1);
     REQUIRE(coordRef.dimensions()[1] == ny + 1);
-    REQUIRE(coordRef.components({ 12, 13 })[0] - coordRef.components({ 11, 13 })[0] == scale);
-    REQUIRE(coordRef.components({ 12, 13 })[1] - coordRef.components({ 12, 12 })[1] == scale);
+    REQUIRE(coordRef.components({ 2, 3 })[0] - coordRef.components({ 1, 3 })[0] == scale);
+    REQUIRE(coordRef.components({ 2, 3 })[1] - coordRef.components({ 2, 2 })[1] == scale);
 
     REQUIRE(ms.data.count(xName) > 0);
     ModelArray& xRef = ms.data.at(xName);
-    REQUIRE(xRef(12, 13) == coordRef.components({ 12, 13 })[0] + scale / 2);
+    REQUIRE(xRef(2, 3) == coordRef.components({ 2, 3 })[0] + scale / 2);
 
     REQUIRE(ms.data.count(yName) > 0);
     ModelArray& yRef = ms.data.at(yName);
-    REQUIRE(yRef(12, 13) == coordRef.components({ 12, 13 })[1] + scale / 2);
+    REQUIRE(yRef(2, 3) == coordRef.components({ 2, 3 })[1] + scale / 2);
 
     REQUIRE(ms.data.count(gridAzimuthName) > 0);
     REQUIRE(ms.data.at(gridAzimuthName)(0, 0) == gridAzimuth0);
@@ -282,11 +282,11 @@ TEST_CASE("Write a diagnostic ParaGrid file")
         }
     }
     double prec = 1e-9;
-    REQUIRE(fractional(12, 12) - fractional(11, 12) == doctest::Approx(xFactor).epsilon(prec));
-    REQUIRE(fractional(12, 12) - fractional(12, 11) == doctest::Approx(yFactor).epsilon(prec));
+    REQUIRE(fractional(2, 2) - fractional(1, 2) == doctest::Approx(xFactor).epsilon(prec));
+    REQUIRE(fractional(2, 2) - fractional(2, 1) == doctest::Approx(yFactor).epsilon(prec));
 
-    REQUIRE(fractionalDG(12, 12) - fractionalDG(11, 12) == doctest::Approx(xFactor).epsilon(prec));
-    REQUIRE(fractionalDG(12, 12) - fractionalDG(12, 11) == doctest::Approx(yFactor).epsilon(prec));
+    REQUIRE(fractionalDG(2, 2) - fractionalDG(1, 2) == doctest::Approx(xFactor).epsilon(prec));
+    REQUIRE(fractionalDG(2, 2) - fractionalDG(2, 1) == doctest::Approx(yFactor).epsilon(prec));
 
     DGField hice = fractionalDG + 10;
     DGField cice = fractionalDG + 20;
@@ -307,8 +307,8 @@ TEST_CASE("Write a diagnostic ParaGrid file")
         }
     }
 
-    REQUIRE(coordinates.components({ 12, 13 })[0] - coordinates.components({ 11, 13 })[0] == scale);
-    REQUIRE(coordinates.components({ 12, 13 })[1] - coordinates.components({ 12, 12 })[1] == scale);
+    REQUIRE(coordinates.components({ 2, 3 })[0] - coordinates.components({ 1, 3 })[0] == scale);
+    REQUIRE(coordinates.components({ 2, 3 })[1] - coordinates.components({ 2, 2 })[1] == scale);
 
     HField x;
     HField y;
