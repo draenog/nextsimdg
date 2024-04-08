@@ -2,9 +2,9 @@ name: compile code and tests
 
 on:
   push:
-    branches: [ main, develop, issue103_CI ]
+    branches: [ main, develop, improve_paragrid_test ]
   pull_request:
-    branches: [ main, develop,  issue103_CI ]
+    branches: [ main, develop, improve_paragrid_test ]
 
 jobs:
 
