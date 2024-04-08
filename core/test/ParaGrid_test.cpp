@@ -29,6 +29,7 @@
 const std::string test_files_dir = TEST_FILES_DIR;
 const std::string filename = test_files_dir + "/paraGrid_test.nc";
 const std::string diagFile = test_files_dir + "/paraGrid_diag.nc";
+const std::string date_string = "2000-01-01T00:00:00Z";
 
 static const int DG = 3;
 static const int DGSTRESS = 6;
@@ -156,7 +157,7 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
         {} };
 
     ModelMetadata metadata;
-    metadata.setTime(TimePoint("2000-01-01T00:00:00Z"));
+    metadata.setTime(TimePoint(date_string));
     // The coordinates are passed through the metadata object as affix
     // coordinates is the correct way to add coordinates to a ModelState
     metadata.extractCoordinates(coordState);
@@ -344,7 +345,7 @@ TEST_CASE("Write a diagnostic ParaGrid file")
         {} };
 
     ModelMetadata metadata;
-    metadata.setTime(TimePoint("2000-01-01T00:00:00Z"));
+    metadata.setTime(TimePoint(date_string));
     // The coordinates are passed through the metadata object as affix
     // coordinates is the correct way to add coordinates to a ModelState
     metadata.extractCoordinates(coordState);
