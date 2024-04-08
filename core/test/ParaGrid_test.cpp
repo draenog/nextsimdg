@@ -33,6 +33,10 @@
 const std::string test_files_dir = TEST_FILES_DIR;
 const std::string filename = test_files_dir + "/paraGrid_test.nc";
 const std::string diagFile = test_files_dir + "/paraGrid_diag.nc";
+#ifdef USE_MPI
+const std::string partition_filename = test_files_dir + "/partition_metadata_3.nc";
+#define TEST_MPI_SIZE 3
+#endif
 const std::string date_string = "2000-01-01T00:00:00Z";
 
 static const int DG = 3;
@@ -46,7 +50,7 @@ size_t c = 0;
 TEST_SUITE_BEGIN("ParaGrid");
 #ifdef USE_MPI
 // Number of ranks should not be hardcoded here
-MPI_TEST_CASE("Write and read a ModelState-based RectGrid restart file", 3)
+MPI_TEST_CASE("Write and read a ModelState-based RectGrid restart file", TEST_MPI_SIZE)
 #else
 TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
 #endif
@@ -192,7 +196,13 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
     ParaGridIO* readIO = new ParaGridIO(gridIn);
     gridIn.setIO(readIO);
 
+#ifdef USE_MPI
+    ModelMetadata metadataIn(partition_filename, test_comm);
+    metadataIn.setTime(TimePoint(date_string));
+    ModelState ms = gridIn.getModelState(filename, metadataIn);
+#else
     ModelState ms = gridIn.getModelState(filename);
+#endif
 
     REQUIRE(ModelArray::dimensions(ModelArray::Type::Z)[0] == nx);
     REQUIRE(ModelArray::dimensions(ModelArray::Type::Z)[1] == ny);
@@ -239,7 +249,11 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
 //    std::filesystem::remove(filename);
 }
 
+#ifdef USE_MPI
+MPI_TEST_CASE("Write a diagnostic ParaGrid file", TEST_MPI_SIZE)
+#else
 TEST_CASE("Write a diagnostic ParaGrid file")
+#endif
 {
     Module::setImplementation<IStructure>("Nextsim::ParametricGrid");
 
@@ -417,7 +431,11 @@ TEST_CASE("Write a diagnostic ParaGrid file")
 #define TEST_FILE_SOURCE .
 #endif
 
+#ifdef USE_MPI
+MPI_TEST_CASE("Test array ordering", TEST_MPI_SIZE)
+#else
 TEST_CASE("Test array ordering")
+#endif
 {
     std::string inputFilename = "ParaGridIO_input_test.nc";
 
@@ -452,7 +470,11 @@ TEST_CASE("Test array ordering")
 #undef TO_STR
 #undef TO_STRI
 
+#ifdef USE_MPI
+MPI_TEST_CASE("Check an exception is thrown for an invalid file name", TEST_MPI_SIZE)
+#else
 TEST_CASE("Check an exception is thrown for an invalid file name")
+#endif
 {
     ParametricGrid gridIn;
     ParaGridIO* readIO = new ParaGridIO(gridIn);
@@ -462,7 +484,15 @@ TEST_CASE("Check an exception is thrown for an invalid file name")
 
     // MD5 hash of the current output of $ date
     std::string longRandomFilename("a44f5cc1f7934a8ae8dd03a95308745d.nc");
+#ifdef USE_MPI
+    ModelMetadata metadataIn(partition_filename, test_comm);
+    metadataIn.setTime(TimePoint(date_string));
+    ModelState ms = gridIn.getModelState(filename, metadataIn);
+    REQUIRE_THROWS(state = gridIn.getModelState(longRandomFilename, metadataIn));
+    std::cout << "FOOOO\n";
+#else
     REQUIRE_THROWS(state = gridIn.getModelState(longRandomFilename));
+#endif
 
 }
 TEST_SUITE_END();

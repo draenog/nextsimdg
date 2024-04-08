@@ -84,6 +84,7 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
         // Dimensions and DG components
         std::multimap<std::string, netCDF::NcDim> dimMap = dataGroup.getDims();
         for (auto entry : ModelArray::definedDimensions) {
+            //std::cout << ModelArray::typeNames[dimCompMap[entry.first]] << "\n";
             if (dimCompMap.count(entry.first) > 0)
                 // TODO Assertions that DG in the file equals the compile time DG in the model. See
                 // #205
