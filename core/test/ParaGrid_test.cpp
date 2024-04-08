@@ -5,8 +5,12 @@
  * @author Tim Spain <timothy.spain@nersc.no>
  */
 
+#ifdef USE_MPI
+#include <doctest/extensions/doctest_mpi.h>
+#else
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
+#endif
 
 #include "include/Configurator.hpp"
 #include "include/ConfiguredModule.hpp"
@@ -40,7 +44,12 @@ namespace Nextsim {
 size_t c = 0;
 
 TEST_SUITE_BEGIN("ParaGrid");
+#ifdef USE_MPI
+// Number of ranks should not be hardcoded here
+MPI_TEST_CASE("Write and read a ModelState-based RectGrid restart file", 3)
+#else
 TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
+#endif
 {
     Module::setImplementation<IStructure>("Nextsim::ParametricGrid");
 
