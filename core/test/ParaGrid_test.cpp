@@ -26,8 +26,9 @@
 #include <ncGroup.h>
 #include <ncVar.h>
 
-const std::string filename = "paraGrid_test.nc";
-const std::string diagFile = "paraGrid_diag.nc";
+const std::string test_files_dir = TEST_FILES_DIR;
+const std::string filename = test_files_dir + "/paraGrid_test.nc";
+const std::string diagFile = test_files_dir + "/paraGrid_diag.nc";
 
 static const int DG = 3;
 static const int DGSTRESS = 6;
