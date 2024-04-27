@@ -44,3 +44,8 @@ void NcFilePar::open_par(
 
     nullObject = false;
 }
+
+void netCDF::setVariableCollective(NcVar var, NcGroup group)
+{
+    ncCheck(nc_var_par_access(group.getId(), var.getId(), NC_COLLECTIVE), __FILE__, __LINE__);
+}
