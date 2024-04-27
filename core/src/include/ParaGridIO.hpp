@@ -101,7 +101,11 @@ private:
 
     // Existing or open files are a property of the computer outside the individual
     // class instance, so they are static.
+#ifdef USE_MPI
+    static std::map<std::string, netCDF::NcFilePar> openFiles;
+#else
     static std::map<std::string, netCDF::NcFile> openFiles;
+#endif
     static std::map<std::string, size_t> timeIndexByFile;
 };
 

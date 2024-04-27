@@ -52,7 +52,11 @@ const std::map<ModelArray::Dimension, bool> ParaGridIO::isDG = {
 };
 
 std::map<ModelArray::Dimension, ModelArray::Type> ParaGridIO::dimCompMap;
+#ifdef USE_MPI
+std::map<std::string, netCDF::NcFilePar> ParaGridIO::openFiles;
+#else
 std::map<std::string, netCDF::NcFile> ParaGridIO::openFiles;
+#endif
 std::map<std::string, size_t> ParaGridIO::timeIndexByFile;
 
 void ParaGridIO::makeDimCompMap()
@@ -202,7 +206,11 @@ ModelState ParaGridIO::readForcingTimeStatic(
 void ParaGridIO::dumpModelState(
     const ModelState& state, const ModelMetadata& metadata, const std::string& filePath)
 {
+#ifdef USE_MPI
+    netCDF::NcFilePar ncFile(filePath, netCDF::NcFile::replace, metadata.mpiComm);
+#else
     netCDF::NcFile ncFile(filePath, netCDF::NcFile::replace);
+#endif
 
     CommonRestartMetadata::writeStructureType(ncFile, metadata);
     netCDF::NcGroup metaGroup = ncFile.addGroup(IStructure::metadataNodeName());
@@ -262,12 +270,20 @@ void ParaGridIO::writeDiagnosticTime(
     size_t nt = (isNew) ? 0 : ++timeIndexByFile.at(filePath);
     if (isNew) {
         // Open a new file and emplace it in the map of open files.
+#ifdef USE_MPI
+        openFiles.try_emplace(filePath, filePath, netCDF::NcFile::replace, meta.mpiComm);
+#else
         openFiles.try_emplace(filePath, filePath, netCDF::NcFile::replace);
+#endif
         // Set the initial time to be zero (assigned above)
         timeIndexByFile[filePath] = nt;
     }
     // Get the file handle
+#ifdef USE_MPI
+    netCDF::NcFilePar& ncFile = openFiles.at(filePath);
+#else
     netCDF::NcFile& ncFile = openFiles.at(filePath);
+#endif
 
     // Get the netCDF groups, creating them if necessary
     netCDF::NcGroup metaGroup = (isNew) ? ncFile.addGroup(IStructure::metadataNodeName())
@@ -355,6 +371,9 @@ void ParaGridIO::writeDiagnosticTime(
     std::vector<netCDF::NcDim> timeDimVec = { timeDim };
     netCDF::NcVar timeVar((isNew) ? dataGroup.addVar(timeName, netCDF::ncDouble, timeDimVec)
                                   : dataGroup.getVar(timeName));
+#ifdef USE_MPI
+    netCDF::setVariableCollective(timeVar, dataGroup);
+#endif
     double secondsSinceEpoch = (meta.time() - TimePoint()).seconds();
     timeVar.putVar({ nt }, { 1 }, &secondsSinceEpoch);
 
@@ -375,6 +394,9 @@ void ParaGridIO::writeDiagnosticTime(
             // Get the variable object, either creating a new one or getting the existing one
             netCDF::NcVar var((isNew) ? dataGroup.addVar(entry.first, netCDF::ncDouble, ncDims)
                                       : dataGroup.getVar(entry.first));
+#ifdef USE_MPI
+            netCDF::setVariableCollective(var, dataGroup);
+#endif
             if (isNew)
                 var.putAtt(mdiName, netCDF::ncDouble, MissingData::value);
 
