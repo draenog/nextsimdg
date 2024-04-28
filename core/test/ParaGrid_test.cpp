@@ -176,7 +176,37 @@ TEST_CASE("Write and read a ModelState-based ParaGrid restart file")
     metadata.extractCoordinates(coordState);
     metadata.affixCoordinates(state);
 
+// Write reference file
+#ifdef USE_MPI
+    // Create subcommunicator with only first rank
+    metadata.setMpiMetadata(test_comm);
+    int colour = MPI_UNDEFINED, key = 0;
+    MPI_Comm rank0Comm;
+
+    if(metadata.mpiMyRank == 0) {
+        colour = 0;
+    }
+    MPI_Comm_split(test_comm, colour, key, &rank0Comm);
+
+    // Write reference file serially on first MPI rank
+    if (metadata.mpiMyRank == 0) {
+        metadata.setMpiMetadata(rank0Comm);
+        metadata.globalExtentX = nx;
+        metadata.globalExtentY = ny;
+        metadata.localCornerX = 0;
+        metadata.localCornerY = 0;
+        metadata.localExtentX = nx;
+        metadata.localExtentY = ny;
+        grid.dumpModelState(state, metadata, filename, true);
+        pio->close(filename);
+        MPI_Comm_free(&rank0Comm);
+    }
+    metadata.setMpiMetadata(test_comm);
+    // Barrier to prevent not 0 ranks to reach filepath test first
+    MPI_Barrier(test_comm);
+#else
     grid.dumpModelState(state, metadata, filename, true);
+#endif
 
     REQUIRE(std::filesystem::exists(std::filesystem::path(filename)));
 
