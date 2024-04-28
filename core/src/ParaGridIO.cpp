@@ -94,7 +94,6 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
         netCDF::NcGroup dataGroup(ncFile.getGroup(IStructure::dataNodeName()));
 
         // Dimensions and DG components
-        std::multimap<std::string, netCDF::NcDim> dimMap = dataGroup.getDims();
         for (auto entry : ModelArray::definedDimensions) {
             //std::cout << ModelArray::typeNames[dimCompMap[entry.first]] << "\n";
             if (dimCompMap.count(entry.first) > 0)
