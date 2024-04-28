@@ -76,12 +76,20 @@ void ParaGridIO::makeDimCompMap()
 
 ParaGridIO::~ParaGridIO() = default;
 
+#ifdef USE_MPI
+ModelState ParaGridIO::getModelState(const std::string& filePath, ModelMetadata& metadata)
+#else
 ModelState ParaGridIO::getModelState(const std::string& filePath)
+#endif
 {
     ModelState state;
 
     try {
+#ifdef USE_MPI
+        netCDF::NcFilePar ncFile(filePath, netCDF::NcFile::read, metadata.mpiComm);
+#else
         netCDF::NcFile ncFile(filePath, netCDF::NcFile::read);
+#endif
         netCDF::NcGroup metaGroup(ncFile.getGroup(IStructure::metadataNodeName()));
         netCDF::NcGroup dataGroup(ncFile.getGroup(IStructure::dataNodeName()));
 

@@ -35,7 +35,11 @@ public:
      * Retrieves the ModelState from a restart file of the parametric_grid type.
      * @param filePath The file path containing the file to be read.
      */
+#ifdef USE_MPI
+    ModelState getModelState(const std::string& filePath, ModelMetadata& metadata) override;
+#else
     ModelState getModelState(const std::string& filePath) override;
+#endif
 
     /*!
      * @brief Writes the ModelState to a given file location from the provided
