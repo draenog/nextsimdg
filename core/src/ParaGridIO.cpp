@@ -158,6 +158,7 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
                 dimKey += dim.getName();
             }
             if (!dimensionKeys.count(dimKey)) {
+                std::cout << "THROWING EXCEPTION\n";
                 throw std::out_of_range(
                     std::string("No ModelArray::Type corresponds to the dimensional key ")
                     + dimKey);
@@ -165,6 +166,7 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
             ModelArray::Type newType = dimensionKeys.at(dimKey);
             state.data[varName] = ModelArray(newType);
             ModelArray& data = state.data.at(varName);
+            std::cout << "READING: " << varName << " " << dimKey << "\n";
             data.resize();
 
             if (newType == ModelArray::Type::Z) {
@@ -173,9 +175,13 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
                 // Reverse the extent vector to go from logical (x, y, z) ordering
                 // of indexes to netCDF storage ordering.
                 std::reverse(extentVector.begin(), extentVector.end());
-                var.getVar(startVector, extentVector, &data[0]);
+//                var.getVar(startVector, extentVector, &data[0]);
             } else {
+#ifdef USE_MPI
+#else
                 var.getVar(&data[0]);
+#endif
+
             }
         }
         ncFile.close();

@@ -14,6 +14,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <iostream>
 
 namespace Nextsim {
 
@@ -288,6 +289,7 @@ public:
     //! class specification.
     void resize()
     {
+        std::cout << "SIZES: " << size() << " " << trueSize() << "\n";
         if (size() != trueSize()) {
             if (hasDoF(type)) {
                 m_data.resize(m_sz.at(type), definedDimensions.at(componentMap.at(type)).length);
