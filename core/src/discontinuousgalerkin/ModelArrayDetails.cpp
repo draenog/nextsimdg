@@ -30,6 +30,21 @@ std::map<ModelArray::Dimension, ModelArray::DimensionSpec> ModelArray::definedDi
 // clang-format on
 };
 
+#ifdef USE_MPI
+const std::map<ModelArray::Dimension, ModelArray::SpatialStructure> ModelArray::spatialMap = {
+    { ModelArray::Dimension::X, { ModelArray::SpatialDims::X, 0, 1 } },
+    { ModelArray::Dimension::Y, { ModelArray::SpatialDims::Y, 0, 1 } },
+    { ModelArray::Dimension::Z, { ModelArray::SpatialDims::Z, 0, 1 } },
+    { ModelArray::Dimension::XVERTEX, { ModelArray::SpatialDims::X, 1, 1 } },
+    { ModelArray::Dimension::YVERTEX, { ModelArray::SpatialDims::Y, 1, 1 } },
+    { ModelArray::Dimension::XCG, { ModelArray::SpatialDims::X, 1, 4 } },
+    { ModelArray::Dimension::YCG, { ModelArray::SpatialDims::Y, 1, 4 } },
+    { ModelArray::Dimension::DG, { ModelArray::SpatialDims::NONE, 0, 0 } },
+    { ModelArray::Dimension::DGSTRESS, { ModelArray::SpatialDims::NONE, 0, 0 } },
+    { ModelArray::Dimension::NCOORDS, { ModelArray::SpatialDims::NONE, 0, 0 } },
+};
+#endif
+
 ModelArray::TypeDimensions ModelArray::typeDimensions = {
     { ModelArray::Type::H,
         {

@@ -74,6 +74,16 @@ public:
     typedef DataType::RowXpr Component;
     typedef DataType::ConstRowXpr ConstComponent;
 
+#ifdef USE_MPI
+    enum class SpatialDims;
+    struct SpatialStructure {
+        SpatialDims direction;
+        bool vertexIncluded;
+        int elementsInCell;
+    };
+    static const std::map<Dimension, SpatialStructure> spatialMap;
+#endif
+
     /*!
      * Construct an unnamed ModelArray of Type::H
      */

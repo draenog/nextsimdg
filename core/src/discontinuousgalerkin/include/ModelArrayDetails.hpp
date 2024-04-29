@@ -16,6 +16,10 @@
 
 enum class Dimension { X, Y, Z, XVERTEX, YVERTEX, XCG, YCG, DG, DGSTRESS, NCOORDS, COUNT };
 
+#ifdef USE_MPI
+enum class SpatialDims {NONE, X, Y, Z};
+#endif
+
 enum class Type {
     H,
     VERTEX,
