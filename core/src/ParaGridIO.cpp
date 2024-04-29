@@ -102,6 +102,39 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
                 continue;
 
             ModelArray::DimensionSpec& dimensionSpec = entry.second;
+#ifdef USE_MPI
+            const ModelArray::SpatialStructure spatialStructure = ModelArray::spatialMap.at(entry.first);
+            int extent = 0;
+            if (spatialStructure.direction == ModelArray::SpatialDims::X) {
+                extent = metadata.localExtentX;
+                if (spatialStructure.vertexIncluded) {
+                    extent++;
+                }
+            }
+            else if (spatialStructure.direction == ModelArray::SpatialDims::Y) {
+                extent = metadata.localExtentY;
+                if (spatialStructure.vertexIncluded) {
+                    extent++;
+                }
+            }
+            else if (spatialStructure.direction == ModelArray::SpatialDims::Y) {
+                extent = metadata.localExtentY;
+                if (spatialStructure.vertexIncluded) {
+                    extent++;
+                }
+            }
+            else if (spatialStructure.direction == ModelArray::SpatialDims::Z) {
+                extent = NZLevels::get();
+                if (spatialStructure.vertexIncluded) {
+                    extent++;
+                }
+            }
+            else {
+                netCDF::NcDim dim = dataGroup.getDim(dimensionSpec.name);
+                extent = dim.getSize();
+            }
+            ModelArray::setDimension(entry.first, extent);
+#else
             netCDF::NcDim dim = dataGroup.getDim(dimensionSpec.name);
             if (entry.first == ModelArray::Dimension::Z) {
                 // A special case, as the number of levels in the file might not be
@@ -110,6 +143,7 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
             } else {
                 ModelArray::setDimension(entry.first, dim.getSize());
             }
+#endif
         }
 
         // Get all vars in the data group, and load them into a new ModelState
