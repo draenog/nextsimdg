@@ -146,6 +146,34 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
 #endif
         }
 
+#ifdef USE_MPI
+	for (auto entry : dataGroup.getVars()) {
+            const std::string& varName = entry.first;
+            netCDF::NcVar& var = entry.second;
+            std::vector<netCDF::NcDim> varDims = var.getDims();
+            std::string dimKey = "";
+            for (netCDF::NcDim& dim : varDims) {
+                dimKey += dim.getName();
+            }
+            if (!dimensionKeys.count(dimKey)) {
+                std::cout << "THROWING EXCEPTION\n";
+                throw std::out_of_range(
+                    std::string("No ModelArray::Type corresponds to the dimensional key ")
+                    + dimKey);
+            }
+            ModelArray::Type newType = dimensionKeys.at(dimKey);
+        int startX = 0, startY = 0, startZ =0;
+	    for (ModelArray::Dimension dimension : ModelArray::typeDimensions.at(newType)) {
+            auto spatialStructure = ModelArray::spatialMap.at(dimension);
+            if (spatialStructure.direction == ModelArray::SpatialDims::X) {
+                startX = metadata.localCornerX * (spatialStructure.elementsInCell - spatialStructure.vertexIncluded);
+            }
+            if (spatialStructure.direction == ModelArray::SpatialDims::Y) {
+                startY = metadata.localCornerY * (spatialStructure.elementsInCell - spatialStructure.vertexIncluded);
+            }
+	    }
+    }
+#else
         // Get all vars in the data group, and load them into a new ModelState
 
         for (auto entry : dataGroup.getVars()) {
@@ -177,13 +205,10 @@ ModelState ParaGridIO::getModelState(const std::string& filePath)
                 std::reverse(extentVector.begin(), extentVector.end());
 //                var.getVar(startVector, extentVector, &data[0]);
             } else {
-#ifdef USE_MPI
-#else
                 var.getVar(&data[0]);
+	    }
+	}
 #endif
-
-            }
-        }
         ncFile.close();
     } catch (const netCDF::exceptions::NcException& nce) {
         std::string ncWhat(nce.what());
